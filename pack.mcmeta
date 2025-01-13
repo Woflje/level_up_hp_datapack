@@ -1,6 +1,1 @@
-{
-  "pack": {
-    "pack_format": 6,
-    "description": "Woflje's Level Up HP datapack makes you start with 5 hearts (10 HP) which you can increase to a max of 20 hearts (40 HP) by killing mobs! The more hearts you have, the more mobs you have to kill for a level up."
-  }
-}
+{"pack": {"pack_format": 6, "description": "Woflje's Level Up HP datapack makes you start with 5 hearts (10 HP) which you can increase to a max of 20 hearts (40 HP) by killing mobs! The more hearts you have, the more mobs you have to kill for a level up."}}

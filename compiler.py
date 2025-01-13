@@ -35,14 +35,14 @@ else:
 	same=1
 	sames=[]
 	for idx in range(0,len(hp_xp_per_level)):
-	    if idx+1 < len(hp_xp_per_level):
-	        if hp_xp_per_level[idx]==hp_xp_per_level[idx+1]:
-	            same+=1
-	        else:
-	            sames.append(same)
-	            same=1
-	    else:
-	        sames.append(same)
+		if idx+1 < len(hp_xp_per_level):
+			if hp_xp_per_level[idx]==hp_xp_per_level[idx+1]:
+				same+=1
+			else:
+				sames.append(same)
+				same=1
+		else:
+			sames.append(same)
 
 	load_code='scoreboard objectives add '+hp_xp+' dummy\n'
 	load_code+='scoreboard objectives add '+hp_level+' dummy\n'
@@ -50,11 +50,11 @@ else:
 	load_code+='scoreboard objectives add '+total_kills+' totalKillCount\n'
 
 	for i in range(0,num_bossbars*len(sames)):
-	    load_code+='bossbar add '+hp_xp+str(i)+' "HP EXP"\n'
-	    load_code+='bossbar set '+hp_xp+str(i)+' max '+str(num_bossbars)+'\n'
-	    load_code+='bossbar set '+hp_xp+str(i)+' style notched_10\n'
-	    load_code+='bossbar set '+hp_xp+str(i)+' color red\n'
-	    load_code+='bossbar set '+hp_xp+str(i)+' value '+str((i%num_bossbars)+1)+'\n'
+		load_code+='bossbar add '+hp_xp+str(i)+' "HP EXP"\n'
+		load_code+='bossbar set '+hp_xp+str(i)+' max '+str(num_bossbars)+'\n'
+		load_code+='bossbar set '+hp_xp+str(i)+' style notched_10\n'
+		load_code+='bossbar set '+hp_xp+str(i)+' color red\n'
+		load_code+='bossbar set '+hp_xp+str(i)+' value '+str((i%num_bossbars)+1)+'\n'
 
 	tick_code='scoreboard players set @a[tag=!'+hp_initialized_tag+'] '+hp_xp+' 0\n'
 	tick_code+='scoreboard players set @a[tag=!'+hp_initialized_tag+'] '+hp_level+' 0\n'
