@@ -2,8 +2,13 @@ from zipfile import ZipFile
 import os
 import json
 from os.path import basename
+from mclib.pack_format import pack_format_dict
 
 ##     Datapack parameters    ##
+
+mc_version = "1.20.6"
+
+pack_format_id = pack_format_dict[mc_version]
 
 start_with_hearts  = 5
 end_with_hearts    = 20
@@ -126,6 +131,7 @@ else:
 			modified=''
 		mcmeta_json=json.load(open("pack.mcmeta",'r'))
 		mcmeta_json['pack']['description']=f"{modified}Woflje's Level Up HP datapack makes you start with {start_with_hearts} hearts ({start_with_hearts*2} HP) which you can increase to a max of {end_with_hearts} hearts ({end_with_hearts*2} HP) by killing mobs! The more hearts you have, the more mobs you have to kill for a level up."
+		mcmeta_json['pack']['pack_format']=pack_format_id
 		output_json=open("pack.mcmeta",'w')
 		json.dump(mcmeta_json,output_json)
 		output_json.close()
